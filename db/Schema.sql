@@ -86,5 +86,6 @@ updateDate = NOW(),
 mean = "생긴 모양이 아름다워 눈으로 보기에 좋다.",
 `type` = "형용사";
 
+SELECT * FROM word;
 
 
