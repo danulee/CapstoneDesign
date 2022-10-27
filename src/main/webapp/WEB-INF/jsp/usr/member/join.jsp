@@ -72,9 +72,9 @@
 		form.submit();
 	}
 	var checkLoginIdDup = _.debounce(function(form) {
-		<!--
+
 		$massage.empty().append('<div class="mt-2"> 아이디를 입력해주세요. </div>');
-		-->
+		
 		$.get('../member/getLoginIdDup', {
 			isAjax : 'Y',
 			loginId : form.loginId.value,
@@ -110,6 +110,7 @@
 		checkLoginIdDup(form);
 	}
 </script>
+
 
 <section class="mt-5">
 	<div class="container mx-auto px-3">

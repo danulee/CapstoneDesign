@@ -36,11 +36,14 @@ public interface MyVocaRepository {
 						<when test="searchKeywordTypeCode == 'type'">
 							AND W.type LIKE CONCAT('%', #{searchKeyword}, '%')
 						</when>
+							<when test="searchKeywordTypeCode == 'mean'">
+							AND W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
+						</when>
 						<otherwise>
 							AND (
 								W.name LIKE CONCAT('%', #{searchKeyword}, '%')
 								OR
-								W.type LIKE CONCAT('%', #{searchKeyword}, '%')
+								W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
 							)
 						</otherwise>
 					</choose>
@@ -71,11 +74,14 @@ public interface MyVocaRepository {
 					<when test="searchKeywordTypeCode == 'type'">
 						AND W.type LIKE CONCAT('%', #{searchKeyword}, '%')
 					</when>
+					<when test="searchKeywordTypeCode == 'mean'">
+						AND W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
 					<otherwise>
 						AND (
 							W.name LIKE CONCAT('%', #{searchKeyword}, '%')
 							OR
-							W.type LIKE CONCAT('%', #{searchKeyword}, '%')
+							W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
 						)
 					</otherwise>
 				</choose>

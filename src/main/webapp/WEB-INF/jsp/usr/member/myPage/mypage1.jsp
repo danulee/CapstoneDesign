@@ -19,6 +19,7 @@ prefix="c"%> <%@ page import="com.kor.exam.utill.Ut"%>
         <li class="nav-item">
           <a class="nav-link" href="/usr/member/myPage/mypage3">오답 노트</a>
         </li>
+        <li> <a href="/usr/member/modify" class="btn btn-primary">회원정보수정</a></li>
       </ul>
     </div>
   </div>

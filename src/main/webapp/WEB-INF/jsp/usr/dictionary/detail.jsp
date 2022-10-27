@@ -37,6 +37,14 @@
 						<th>뜻</th>
 						<td>${word.mean}</td>
 					</tr>
+					<tr>
+						<th>고유어 여부</th>
+						<td>${word.origin}</td>
+					</tr>
+					<tr>
+						<th>예문</th>
+						<td>${word.example}</td>
+					</tr>
 					
 				</tbody>
 			</table>

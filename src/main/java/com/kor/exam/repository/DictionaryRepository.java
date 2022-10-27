@@ -35,16 +35,19 @@ public interface DictionaryRepository {
 						<when test="searchKeywordTypeCode == 'type'">
 							AND W.type LIKE CONCAT('%', #{searchKeyword}, '%')
 						</when>
+						<when test="searchKeywordTypeCode == 'mean'">
+							AND W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
+						</when>
 						<otherwise>
 							AND (
 								W.name LIKE CONCAT('%', #{searchKeyword}, '%')
 								OR
-								W.type LIKE CONCAT('%', #{searchKeyword}, '%')
+								W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
 							)
 						</otherwise>
 					</choose>
 				</if>
-				ORDER BY W.id DESC
+				ORDER BY W.id ASC
 				<if test="limitTake != -1">
 					LIMIT #{limitStart}, #{limitTake}
 				</if>
@@ -68,11 +71,14 @@ public interface DictionaryRepository {
 					<when test="searchKeywordTypeCode == 'type'">
 						AND W.type LIKE CONCAT('%', #{searchKeyword}, '%')
 					</when>
+					<when test="searchKeywordTypeCode == 'mean'">
+						AND W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
+					</when>
 					<otherwise>
 						AND (
 							W.name LIKE CONCAT('%', #{searchKeyword}, '%')
 							OR
-							W.type LIKE CONCAT('%', #{searchKeyword}, '%')
+							W.mean LIKE CONCAT('%', #{searchKeyword}, '%')
 						)
 					</otherwise>
 				</choose>

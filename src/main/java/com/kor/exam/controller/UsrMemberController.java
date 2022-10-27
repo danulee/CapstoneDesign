@@ -210,31 +210,31 @@ public class UsrMemberController {
 			return rq.jsHistoryBack("loginPw(을)를 입력해주세요.");
 		}
 
-		if (rq.getLoginedMember().getLoginPw().equals(Ut.sha256(loginPw)) == false) {
+		if (rq.getLoginedMember().getLoginPw().equals(loginPw) == false) {
 			return rq.jsHistoryBack("비밀번호가 일치하지 않습니다.");
 		}
 
-		if (replaceUri.equals("../member/modify")) {
-			String memberModifyAuthKey = memberService.getMemberModifyAuthKey(rq.getLoginedMemberId());
-
-			replaceUri += "?memberModifyAuthKey=" + memberModifyAuthKey;
-		}
+//		if (replaceUri.equals("../member/modify")) {
+//			String memberModifyAuthKey = memberService.getMemberModifyAuthKey(rq.getLoginedMemberId());
+//
+//			replaceUri += "?memberModifyAuthKey=" + memberModifyAuthKey;
+//		}
 
 		return rq.jsReplace("확인되었습니다.", replaceUri);
 	}
 
 	@RequestMapping("/usr/member/modify")
 	public String showModify(String memberModifyAuthKey) {
-		if (Ut.empty(memberModifyAuthKey)) {
-			return rq.historyBackJsOnView("memberModifyAuthKey(이)가 필요합니다.");
-		}
-
-		ResultData checkMemberModifyAuthKeyRd = memberService.checkMemberModifyAuthKey(rq.getLoginedMemberId(),
-				memberModifyAuthKey);
-
-		if (checkMemberModifyAuthKeyRd.isFail()) {
-			return rq.historyBackJsOnView(checkMemberModifyAuthKeyRd.getMsg());
-		}
+//		if (Ut.empty(memberModifyAuthKey)) {
+//			return rq.historyBackJsOnView("memberModifyAuthKey(이)가 필요합니다.");
+//		}
+//
+//		ResultData checkMemberModifyAuthKeyRd = memberService.checkMemberModifyAuthKey(rq.getLoginedMemberId(),
+//				memberModifyAuthKey);
+//
+//		if (checkMemberModifyAuthKeyRd.isFail()) {
+//			return rq.historyBackJsOnView(checkMemberModifyAuthKeyRd.getMsg());
+//		}
 
 		return "usr/member/modify";
 	}
@@ -243,16 +243,16 @@ public class UsrMemberController {
 	@ResponseBody
 	public String doModify(String memberModifyAuthKey, String loginPw, String name, String nickname, String email,
 			String cellphoneNo) {
-		if (Ut.empty(memberModifyAuthKey)) {
-			return rq.jsHistoryBack("memberModifyAuthKey(이)가 필요합니다.");
-		}
-
-		ResultData checkMemberModifyAuthKeyRd = memberService.checkMemberModifyAuthKey(rq.getLoginedMemberId(),
-				memberModifyAuthKey);
-
-		if (checkMemberModifyAuthKeyRd.isFail()) {
-			return rq.jsHistoryBack(checkMemberModifyAuthKeyRd.getMsg());
-		}
+//		if (Ut.empty(memberModifyAuthKey)) {
+//			return rq.jsHistoryBack("memberModifyAuthKey(이)가 필요합니다.");
+//		}
+//
+//	ResultData checkMemberModifyAuthKeyRd = memberService.checkMemberModifyAuthKey(rq.getLoginedMemberId(),
+//		memberModifyAuthKey);
+//
+//		if (checkMemberModifyAuthKeyRd.isFail()) {
+//			return rq.jsHistoryBack(checkMemberModifyAuthKeyRd.getMsg());
+//		}
 		if (Ut.empty(loginPw)) {
 			loginPw = null;
 		}

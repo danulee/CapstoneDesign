@@ -33,6 +33,7 @@
 					<col width="100" />
 					<col width="100" />
 					<col />
+					<col width="100" />
 					<col width ="150" />
 				</colgroup>
 				<thead>
@@ -41,6 +42,7 @@
 						<th>단어</th>
 						<th>품사</th>
 						<th>뜻</th>
+						<th>자세히보기</th>
 						<th>삭제하기</th>
 					</tr>
 				</thead>
@@ -52,6 +54,7 @@
 								href="${rq.getWordDetailUriFromWordList(word)}">${word.name}</a></td>
 							<td>${word.type}</td>
 							<td>${word.mean}</td>
+							<td><a href="${rq.getWordDetailUriFromWordList(word)}" style="padding: 0px 10px 0px 0px" class="a-custom">자세히보기</a></td>
 							<td><a href="deleteWord?id=${word.id}">삭제하기</a></td>
 						</tr>
 					</c:forEach>
