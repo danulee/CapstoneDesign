@@ -50,7 +50,7 @@
 				<div class="col">
 					<h4>${word.name}</h4>
 					<p>[${word.type}] ${word.mean}</p>
-					<a href="${rq.getWordDetailUriFromWordList(word)}" style="padding: 0px 10px 0px 0px" class="a-custom">자세히보기</a>
+					<a href="/usr/dictionary/detail?name=${word.name}vg" style="padding: 0px 10px 0px 0px" class="a-custom">자세히보기</a>
 					<a href="deleteWord?name=${word.name}" style="padding: 0px 10px 0px 0px" class="a-custom">삭제하기</a>
 				</div>
 			</div>
